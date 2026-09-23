@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Arrow from '../components/Arrow.astro';
+mailto
+import { mailto } from '../data/nav.js';
+
+const page = {
+  title: "Vacatures | D&W Security",
+  description: "Alert, betrouwbaar en klantvriendelijk? Werk als beveiliger bij D&W Security in horeca, evenementen en objectbeveiliging.",
+  current: "/vacatures"
+};
+---
+<Base {...page}>
+<section class="sub"><div class="wrap split"><div>
+ <span class="label">Vacatures</span><h1>Werken <em>bij</em> D&amp;W</h1>
+ <p class="lead">Alert, betrouwbaar en klantvriendelijk? Versterk ons team.</p>
+ <a class="btn solid" href={`${mailto}?subject=Sollicitatie`}>Solliciteer <Arrow /></a>
+</div><ul class="list">
+ <li>Diploma Beveiliger 2<span>Vereist</span></li><li>Geldige beveiligerspas<span>Vereist</span></li>
+ <li>Avond &amp; weekend<span>Gewenst</span></li><li>Ervaring horeca/events<span>Pré</span></li>
+</ul></div></section>
+
+</Base>

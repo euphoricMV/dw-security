@@ -1,0 +1,10 @@
+---
+/* Onderaan elke dienstpagina: de andere drie diensten. */
+import Arrow from './Arrow.astro';
+import config from '../config.js';
+import { servicePath, attrText } from '../data/nav.js';
+
+interface Props { current: string }
+const others = config.services.filter((s) => s.slug !== Astro.props.current);
+---
+<section class="others"><div class="wrap"><span class="label">Ook interessant</span><h2>Andere <em>diensten</em></h2><div class="cards">{others.map((s) => <a class="card" href={servicePath(s.slug)}><div class="img"><img src={s.image} alt={attrText(s.name)}></div><h3 set:html={s.name} /><span class="more">Lees meer <Arrow /></span></a>)}</div></div></section>

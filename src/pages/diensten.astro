@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceTiles from '../components/ServiceTiles.astro';
+
+const page = {
+  title: "Diensten | D&W Security",
+  description: "Horecabeveiliging, evenementenbeveiliging, persoonsbeveiliging en objectbeveiliging door gecertificeerde beveiligers van D&W Security.",
+  current: "/diensten"
+};
+---
+<Base {...page}>
+<section class="sub"><div class="wrap"><span class="label">Diensten</span><h1>Wat we <em>doen</em></h1></div></section>
+<section class="block" style="padding-top:0"><div class="wrap"><ServiceTiles /></div></section>
+
+</Base>

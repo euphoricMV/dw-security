@@ -1,0 +1,7 @@
+---
+/* Dienstenpagina: de vier diensten als tegels. */
+import Arrow from './Arrow.astro';
+import config from '../config.js';
+import { servicePath } from '../data/nav.js';
+---
+<div class="tiles">{config.services.map((s) => <a class="tile" href={servicePath(s.slug)}><div><h3 set:html={s.name} /><p>{s.intro}</p></div><span class="arr"><Arrow /></span></a>)}</div>

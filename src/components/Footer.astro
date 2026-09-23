@@ -1,0 +1,14 @@
+---
+import config from '../config.js';
+import { servicePath, plain, tel, mailto } from '../data/nav.js';
+
+const { business, contact, legal, social, services } = config;
+const year = new Date().getFullYear();
+---
+<footer><div class="wrap">
+<div class="fgrid"><div class="flogo"><img src="/assets/img/logo.png" alt={business.name}><div class="soc"><a href={social.facebook} aria-label="Facebook" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z"/></svg></a><a href={social.instagram} aria-label="Instagram" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a></div></div>
+<div><h4>Menu</h4><ul><li><a href="/over-ons">Over ons</a></li><li><a href="/vacatures">Vacatures</a></li><li><a href="/contact">Contact</a></li></ul></div>
+<div><h4>Diensten</h4><ul>{services.map((s) => <li><a href={servicePath(s.slug)}>{plain(s.name)}</a></li>)}</ul></div>
+<div><h4>Contact</h4><ul><li><a href={mailto}>{contact.email}</a></li><li><a href={tel}>{contact.phoneDisplay}</a></li><li>{contact.street}, {contact.city}</li></ul></div></div>
+<div class="fbottom"><span>© {year} {business.name}</span><span>KvK {legal.kvk} · Vergunning {legal.license}</span></div></div></footer>
+<a class="fab" href={tel}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> Bel 24/7</a>

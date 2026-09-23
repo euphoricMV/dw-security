@@ -1,0 +1,7 @@
+---
+/* Logostrip opdrachtgevers. De lijst staat twee keer in de track zodat de
+   CSS-animatie (translateX -50%) naadloos doorloopt; de kopie is aria-hidden. */
+import config from '../config.js';
+const { clients } = config;
+---
+<div class="logo-strip" aria-label="Opdrachtgevers"><div class="logo-track">{clients.map((c) => <img src={c.logo} alt={c.name}>)}{clients.map((c) => <img src={c.logo} aria-hidden="true" alt={c.name}>)}</div></div>

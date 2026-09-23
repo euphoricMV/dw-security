@@ -1,0 +1,38 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import config from '../config.js';
+
+interface Props {
+  title: string;        // volledige <title>
+  description: string;
+  current?: string;     // pad van het menu-item dat actief is (class "on")
+  noindex?: boolean;
+}
+const { title, description, current, noindex = false } = Astro.props;
+
+const site = config.business.name;
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '/'), Astro.site).href;
+const ogImage = new URL('/assets/img/hero.jpg', Astro.site).href;
+---
+<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>{title}</title>
+<meta name="description" content={description}>
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'}>
+<link rel="canonical" href={canonical}>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content={site}>
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content={canonical}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={description}>
+<meta property="og:image" content={ogImage}>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="icon" href="/assets/img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/img/logo.png">
+<slot name="preload" />
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>import '../scripts/main.js';</script>
+<slot name="head" />
+</head><body><Header current={current} /><main><slot /></main><Footer />
+</body></html>

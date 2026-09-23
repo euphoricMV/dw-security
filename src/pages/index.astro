@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import Arrow from '../components/Arrow.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Phone from '../components/Phone.astro';
+import ServiceBigCards from '../components/ServiceBigCards.astro';
+import { organization } from '../data/schema.js';
+import { tel } from '../data/nav.js';
+import config from '../config.js';
+
+const page = {
+  title: "D&W Security | Beveiliging op maat, 24/7 bereikbaar",
+  description: "Ervaren beveiligers voor horeca, evenementen, objecten en personen. Bij spoed binnen 1–2 uur ter plaatse. Erkend (ND5359) en landelijk actief."
+};
+---
+<Base {...page}>
+<script slot="preload" is:inline>// oude links als /#horeca → echte pagina
+(function(){var r={diensten:"/diensten",horeca:"/diensten/horeca",evenementen:"/diensten/evenementen",persoonsbeveiliging:"/diensten/persoonsbeveiliging",objectbeveiliging:"/diensten/objectbeveiliging","over-ons":"/over-ons",vacatures:"/vacatures",contact:"/contact"};var t=r[location.hash.slice(1)];if(t)location.replace(t)})();</script>
+<JsonLd slot="head" data={organization} />
+<section class="hero"><div class="bg"><img src="/assets/img/hero.jpg" alt="Beveiligers van D&amp;W Security aan het werk"></div><div class="wrap">
+ <span class="label">Beveiliging op maat · 24/7</span>
+ <h1>Veiligheid waar u op kunt <em>rekenen</em>.</h1>
+ <p>Ervaren beveiligers voor horeca, evenementen, objecten en personen. Bij spoed binnen 1–2 uur ter plaatse.</p>
+ <div class="acts"><a class="btn solid" href="/contact">Offerte aanvragen <Arrow /></a><a class="btn line" href="/vacatures">Solliciteren</a></div>
+</div></section>
+<div class="wrap facts"><div><b>24/7</b><span>Bereikbaar</span></div><div><b>1–2 uur</b><span>Ter plaatse</span></div><div><b>ND5359</b><span>Erkend</span></div><div><b>NL</b><span>Landelijk</span></div></div>
+<section class="block"><div class="wrap"><div class="head"><div><span class="label">Diensten</span><h2>D&amp;W <em>levert</em></h2></div><a class="more" href="/diensten">Alle diensten</a></div><ServiceBigCards /></div></section>
+<section class="stepsec"><div class="wrap two"><div><span class="label">Werkwijze</span><h2>Stap voor <em>stap</em></h2></div>
+ <ol class="steps"><li><span>01</span><h3>Vraag een offerte aan</h3><p>Wij reageren altijd binnen 24 uur op werkdagen.</p></li><li><span>02</span><h3>Planning &amp; kennismaking</h3><p>We begeleiden u van begin tot eind en nemen regelwerk en planning uit handen.</p></li><li><span>03</span><h3>Beveiliging ingezet</h3><p>Wij zijn er altijd om u te helpen met de inzet van onze beveiligers.</p></li></ol></div></section>
+<section class="why"><div class="wrap"><span class="label">Waarom D&amp;W</span><h2>Waarom <em>D&amp;W</em>?</h2>
+ <ul><li><h3>24/7 inzetbaar</h3><p>Bij nood binnen 1 à 2 uur ter plaatse.</p></li><li><h3>Landelijk actief</h3><p>Snelle en adequate beveiliging door heel Nederland.</p></li><li><h3>Kwaliteit &amp; betrouwbaarheid</h3><p>Gecertificeerd personeel. Gegarandeerde veiligheid voor klein en groot.</p></li><li><h3>Maatwerk</h3><p>Een beveiligingsconcept dat past bij uw bedrijfscultuur, wensen en omstandigheden.</p></li></ul></div></section>
+<section class="feature"><div class="fimg"><img src="/assets/img/beveiliger.jpg" alt="Beveiliger van D&amp;W Security"></div><div class="ftext">
+ <span class="label">Onze aanpak</span><h2>Kwaliteit &amp; <em>betrouwbaarheid</em></h2>
+ <p class="fp">Uitsluitend gecertificeerde medewerkers die onze waarden delen. Of het nu gaat om objecten, winkels, evenementen of personen: uw veiligheid is onze prioriteit.</p>
+ <div class="acts" style="margin-top:34px"><a class="btn dark" href="/over-ons">Meer over ons <Arrow /></a></div></div></section>
+<section class="clients"><div class="wrap"><span class="label">Opdrachtgevers</span><h2>Elke grootte. <em>Elke industrie.</em></h2></div><ClientLogos /></section>
+<section class="band"><div class="wrap"><h2>Beveiliging die u kunt<br><em>vertrouwen.</em></h2><p>Neem vandaag nog contact op en ontvang een offerte.</p>
+ <div class="acts" style="justify-content:center;margin-top:36px"><a class="btn solid" href="/contact">Offerte aanvragen <Arrow /></a><a class="btn line" href={tel}><Phone /> {config.contact.phoneDisplay}</a></div></div></section>
+
+</Base>

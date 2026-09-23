@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import Arrow from '../components/Arrow.astro';
+import { tel } from '../data/nav.js';
+import config from '../config.js';
+
+const page = {
+  title: "Contact & offerte | D&W Security",
+  description: "24/7 bereikbaar op +31 6 155 716 22. Vraag direct een offerte aan voor horeca-, evenementen-, persoons- of objectbeveiliging.",
+  current: "/contact"
+};
+---
+<Base {...page}>
+<section class="sub"><div class="wrap split"><div>
+ <span class="label">Contact · 24/7</span><h1>Direct <em>contact</em></h1>
+ <a class="phone" href={tel}>{config.contact.phoneDisplay}</a>
+ <ul class="list" style="margin-top:30px"><li>{config.contact.email}<span>E-mail</span></li><li>{config.contact.street}, {config.contact.city}<span>Adres</span></li><li>{config.legal.kvk} · {config.legal.license}<span>KvK · Vergunning</span></li></ul>
+</div>
+<form class="quote" novalidate>
+ <div class="row"><label>Naam<input id="f-naam" name="naam" required autocomplete="name"></label><label>E-mail<input id="f-email" name="email" type="email" required autocomplete="email"></label></div>
+ <div class="row"><label>Telefoon<input id="f-tel" name="telefoon" type="tel" autocomplete="tel"></label><label>Dienst<select id="f-dienst" name="dienst"><option>Horeca</option><option>Evenementen</option><option>Persoonsbeveiliging</option><option>Objectbeveiliging</option><option>Anders</option></select></label></div>
+ <label>Bericht<textarea id="f-bericht" name="bericht" placeholder="Locatie, datum, aantal beveiligers"></textarea></label>
+ <div><button class="btn solid" type="submit">Verstuur <Arrow /></button></div>
+ <p class="ok" role="status">Je e-mailprogramma opent met de aanvraag.</p>
+</form></div></section>
+
+</Base>

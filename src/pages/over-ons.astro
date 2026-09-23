@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Arrow from '../components/Arrow.astro';
+
+const page = {
+  title: "Over ons | D&W Security",
+  description: "D&W Security is een familiebedrijf uit Den Haag, opgericht door de broers Denzel en Wesley. Gecertificeerde beveiligers, één duidelijke missie.",
+  current: "/over-ons"
+};
+---
+<Base {...page}>
+<section class="sub"><div class="wrap split"><div>
+ <span class="label">Over ons</span><h1>Uw partner in <em>veiligheid</em></h1>
+ <p class="lead">Een familiebedrijf uit Den Haag, ruim acht jaar geleden opgericht door twee broers.</p>
+ <div class="founders"><div><b>Denzel</b><span>Oprichter</span></div><div><b>Wesley</b><span>Oprichter</span></div></div>
+ <div class="acts" style="margin-top:36px"><a class="btn solid" href="/contact">Neem contact op <Arrow /></a></div>
+</div><div class="emblem"><img src="/assets/img/logo.png" alt=""></div></div></section>
+<figure class="wide"><img src="/assets/img/team.jpg" alt="Het team"><figcaption>Het team</figcaption></figure><section class="statement"><div class="wrap two"><h2>Eén duidelijke <em>missie</em>.</h2><div><p>Krachtige en betrouwbare beveiligingsdiensten leveren — gedreven door passie voor veiligheid en kwaliteit.</p><p>Uitsluitend gecertificeerde medewerkers, een zorgvuldige en klantgerichte aanpak, en een hecht, betrokken team waarin iedereen zich gewaardeerd voelt.</p></div></div></section><section class="feature"><div class="fimg"><img src="/assets/img/over-ons-team.jpg" alt="Team van D&amp;W Security"></div><div class="ftext">
+ <span class="label">Kwaliteit</span><h2>Gecertificeerde <em>beveiligers</em></h2><ul class="flist"><li><span>01</span><div><b>Wettelijke eisen</b><p>Alle beveiligers voldoen aan de normen en eisen van de branche.</p></div></li><li><span>02</span><div><b>Kennis &amp; ervaring</b><p>Beveiliging tot in de puntjes verzorgd.</p></div></li><li><span>03</span><div><b>Verantwoordelijk</b><p>Betrouwbaar, effectief en professioneel.</p></div></li><li><span>04</span><div><b>Continuïteit</b><p>Veiligheid en tevredenheid van onze opdrachtgevers.</p></div></li></ul></div></section><section class="gallery"><figure><img src="/assets/img/over-ons-1.jpg" alt="Over ons — D&amp;W Security in actie"></figure><figure><img src="/assets/img/over-ons-2.jpg" alt="Over ons — D&amp;W Security in actie"></figure><figure><img src="/assets/img/over-ons-3.jpg" alt="Over ons — D&amp;W Security in actie"></figure><figure><img src="/assets/img/evenementen-2.jpg" alt="Over ons — D&amp;W Security in actie"></figure></section><section class="values"><div class="wrap"><span class="label">Kernwaardes</span><h2>Waar wij voor <em>staan</em></h2><div class="vgrid"><div><h3>Betrouwbaar</h3><p>Eerlijk en transparant in afspraken, procedures en beloftes.</p></div><div><h3>Kwaliteit</h3><p>Initiatief, toewijding en altijd op zoek naar verbetering.</p></div><div><h3>Vooruitstrevend</h3><p>Innovatieve oplossingen en een veilige, gezonde werkomgeving.</p></div><div><h3>Oplossingsgericht</h3><p>Klanten zijn partners. We zetten graag een stap extra.</p></div></div></div></section><section class="band"><div class="wrap"><h2>Beveiliging die u kunt<br><em>vertrouwen.</em></h2><p>Neem vandaag nog contact op en ontvang een offerte.</p><a class="btn solid" href="/contact" style="margin-top:36px">Vraag een offerte aan <Arrow /></a></div></section>
+
+</Base>

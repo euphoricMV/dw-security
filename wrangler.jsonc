@@ -1,0 +1,16 @@
+// Cloudflare Workers. `wrangler deploy` builds the site first (Astro → dist/)
+// and publishes it as static assets. Only /api/* runs worker/index.js.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dw-security",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-23",
+  "build": { "command": "npm run build" },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": { "enabled": true }
+}

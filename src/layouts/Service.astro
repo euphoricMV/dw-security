@@ -1,0 +1,22 @@
+---
+/* Dienstpagina: kop met foto en opsomming, dan de eigen inhoud (slot),
+   dan "Andere diensten". */
+import Base from './Base.astro';
+import Arrow from '../components/Arrow.astro';
+import Phone from '../components/Phone.astro';
+import OtherServices from '../components/OtherServices.astro';
+import config from '../config.js';
+import { tel, attrText } from '../data/nav.js';
+
+interface Props { slug: string; title: string; description: string; bullets: string[] }
+const { slug, title, description, bullets } = Astro.props;
+const service = config.services.find((s) => s.slug === slug);
+---
+<Base title={title} description={description}>
+<section class="sub"><div class="wrap split"><div>
+ <span class="label">Dienst</span><h1 set:html={service.name} /><p class="lead">{service.intro}</p>
+ <ul class="list">{bullets.map((b) => <li set:html={b} />)}</ul>
+ <div class="acts" style="margin-top:30px"><a class="btn solid" href="/contact">Offerte aanvragen <Arrow /></a><a class="btn line" href={tel}><Phone /> Bel 24/7</a></div>
+</div><div class="photo"><img src={service.image} alt={attrText(service.name)}></div></div></section><slot />
+<OtherServices current={slug} />
+</Base>

@@ -1,0 +1,20 @@
+# Oude WordPress-adressen (dwsecurity.nl/index.php/…) → nieuwe pagina's
+/index.php/horecabeveiliging/ /diensten/horeca 301
+/index.php/horecabeveiliging /diensten/horeca 301
+/index.php/evenement-beveiliging/ /diensten/evenementen 301
+/index.php/evenement-beveiliging /diensten/evenementen 301
+/index.php/persoonsbeveiliging/ /diensten/persoonsbeveiliging 301
+/index.php/persoonsbeveiliging /diensten/persoonsbeveiliging 301
+/index.php/object-beveiliging/ /diensten/objectbeveiliging 301
+/index.php/object-beveiliging /diensten/objectbeveiliging 301
+/index.php/services/ /diensten 301
+/index.php/services /diensten 301
+/index.php/over-dw-security/ /over-ons 301
+/index.php/over-dw-security /over-ons 301
+/index.php/vacatures/ /vacatures 301
+/index.php/vacatures /vacatures 301
+/index.php/contact/ /contact 301
+/index.php/contact /contact 301
+/index.php/offerte-voor-beveiliging-aanvragen/ /contact 301
+/index.php/offerte-voor-beveiliging-aanvragen /contact 301
+/index.php/* / 301

@@ -1,0 +1,7 @@
+---
+/* Homepage: de vier diensten als grote kaarten. */
+import Arrow from './Arrow.astro';
+import config from '../config.js';
+import { servicePath, attrText } from '../data/nav.js';
+---
+<div class="bigcards">{config.services.map((s) => <a class="bigcard" href={servicePath(s.slug)}><div class="bc-txt"><h3 set:html={s.name} /><p>{s.intro}</p><span class="more">Lees meer <Arrow /></span></div><div class="bc-img"><img src={s.homeImage || s.image} alt={attrText(s.name)}></div></a>)}</div>

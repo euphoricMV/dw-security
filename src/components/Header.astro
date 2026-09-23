@@ -1,0 +1,12 @@
+---
+import { menu } from '../data/nav.js';
+import config from '../config.js';
+
+interface Props { current?: string }
+const { current } = Astro.props;
+const cls = (item) => [item.cls, item.href === current && 'on'].filter(Boolean).join(' ') || undefined;
+---
+<header><nav class="wrap nav" aria-label="Hoofdmenu">
+<a class="brand" href="/"><img src="/assets/img/logo.png" alt={`${config.business.name} logo`}><span>Security</span></a>
+<button class="burger" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
+<ul class="menu">{menu.map((item) => <li><a class={cls(item)} href={item.href}>{item.label}</a></li>)}</ul></nav></header>
